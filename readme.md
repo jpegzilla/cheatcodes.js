@@ -6,7 +6,7 @@ a class for creating "hotkey" or "cheat code" actions in the browser
 
 instantiate the class and then pass in the keys you want to use as a cheat code in order as a comma-separated string or an array of strings. call `start` on the instance when you want the cheat code to become active.
 
-default timeout is one second! meaning that if you don't press a key in one second, the cheat code resets.
+default delay is one second! meaning that if you don't press a key in one second after pressing the first key in the combination, the cheat code resets. you can change the delay if you'd like.
 
 syntax:
 
