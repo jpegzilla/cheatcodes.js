@@ -116,7 +116,6 @@ class cheatcode {
               code = newString;
             });
 
-          console.log(code);
           break;
       }
 
