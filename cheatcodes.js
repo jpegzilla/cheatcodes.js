@@ -21,7 +21,7 @@ const utils = {
     e: 69,
     enter: 13,
     equal: 187,
-    start: 187,
+    start: 13,
     f: 70,
     f1: 112,
     f10: 121,
@@ -61,34 +61,6 @@ const utils = {
     x: 88,
     y: 89,
     z: 90
-  },
-
-  // utility for only executing things once
-  once: function(fn, args, unique) {
-    if (typeof onces == "undefined") onces = {};
-
-    if (typeof fn == "function") {
-      //If the first parameter is a function
-      if (typeof args == "string") {
-        //If no parameters
-        args = [];
-        unique = args;
-      }
-
-      if (typeof onces[unique] == "undefined" || !onces[unique]) {
-        onces[unique] = true;
-        return fn.apply(this, args);
-      }
-    } else {
-      //Else return boolean
-      unique = fn; //If only one parameter is passed
-      if (typeof onces[unique] == "undefined" || !onces[unique]) {
-        onces[unique] = true;
-        return true;
-      } else {
-        return false;
-      }
-    }
   },
 
   arraysEqual: function(a, b) {
