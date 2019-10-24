@@ -14,6 +14,8 @@ syntax:
 new cheatcode(code: string|array, callback: function [, delay: number])
 ```
 
+valid keys: `a-z`, `0-9`, `f1-f12`, `up`, `down`, `left` and `right` arrow keys, `shift`, `space`, `minus`, `enter`, `ctrl`, `caps lock`, `alt`
+
 example:
 
 ```javascript
