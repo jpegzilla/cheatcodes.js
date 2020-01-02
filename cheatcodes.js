@@ -142,22 +142,21 @@ class cheatcode {
       // set the current progress in entering the cheatcode
       this.progress.push(e.which);
 
-      // check to see if the correct code has been entered
-      // if they have, fire the callback provided to the class
-      if (utils.arraysEqual(this.progress, this.cheatcode)) {
-        clearTimeout(timeout);
-        this.progress = [];
-        this.callback.apply(this);
-      }
-
-      // clear the timeout so that it can reset every time a key is pressed
-      clearTimeout(timeout);
-
       // clear the progress in the cheat code
       const clearStorage = () => {
         this.progress = [];
         clearTimeout(timeout);
       };
+
+      // check to see if the correct code has been entered
+      // if they have, fire the callback provided to the class
+      if (utils.arraysEqual(this.progress, this.cheatcode)) {
+        clearStorage();
+        this.callback.apply(this);
+      }
+
+      // clear the timeout so that it can reset every time a key is pressed
+      clearTimeout(timeout);
 
       // set a new timeout so the user has time to finish entering the code
       timeout = setTimeout(clearStorage, this.delay);
